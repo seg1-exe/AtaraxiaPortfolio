@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %> 
+    <h1>Gallery</h1>
+
+    <form action="/gallery" method="post">
+        <div>
+            <label for="nom"> Votre nom</label>
+            <input type="text" name="nom" id="nom" required>
+        </div>
+        <div>
+            <label for="oeuvre">Oeuvre</label>
+            <select name="oeuvre" id="oeuvre">
+                <% if (locals.oeuvres) { %>
+                    <% oeuvres.forEach(oeuvre => { %>
+                        <option value="<%= oeuvre %>"><%= oeuvre %></option>
+                    <% }) %>
+                <% } %>
+            </select>
+        </div>
+        <button type="submit">Envoyer</button>
+    </form>
+<%- include('./partials/footer.ejs') %>
