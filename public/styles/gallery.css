@@ -1,0 +1,45 @@
+h1{
+    text-align: center;
+}
+.homepage-gallery{
+    padding: 2%;
+}
+.homepage-gallery-selector{
+    text-align: center;
+}
+.homepage-gallery-selector a{
+    margin-right: 30px;
+}
+.homepage-gallery-grid{
+    margin-top: 50px;
+}
+.homepage-gallery-view-all{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.oneElement{
+    text-align: center;
+}
+.oneElement p{
+    margin-top: 5%;
+}
+.workshop img{
+    width: 40%;
+    margin-bottom: 40px;
+}
+.workshop{
+    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.return{
+    margin-left: 8%;
+    font-size: 1.2rem;
+}
+.return:hover{
+    text-decoration: underline;
+}

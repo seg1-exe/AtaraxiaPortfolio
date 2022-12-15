@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+.homepage-contact{
+    padding: 2%;
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 30vh;
+}
+.social-medias a{
+    margin-right: 20px;
+}
+.social-medias svg{
+    width: 80px;
+    color: var(--rouge);
+}

@@ -1,21 +1,21 @@
 <%- include('./partials/header.ejs') %> 
-    <h1>Gallery</h1>
-
-    <form action="/gallery" method="post">
-        <div>
-            <label for="nom"> Votre nom</label>
-            <input type="text" name="nom" id="nom" required>
-        </div>
-        <div>
-            <label for="oeuvre">Oeuvre</label>
-            <select name="oeuvre" id="oeuvre">
-                <% if (locals.oeuvres) { %>
-                    <% oeuvres.forEach(oeuvre => { %>
-                        <option value="<%= oeuvre %>"><%= oeuvre %></option>
-                    <% }) %>
-                <% } %>
-            </select>
-        </div>
-        <button type="submit">Envoyer</button>
-    </form>
+    <h1>GALLERY</h1>
+    <section class="homepage-gallery"></section>
+    <div class="homepage-gallery-selector">
+        <a>ILLUSTRATIONS</a>
+        <a>ANIMATIONS</a>
+        <a>CLIPS</a>
+    </div>
+    <section class="homepage-gallery-grid">
+        <% if (locals.oeuvres) { %>
+            <% oeuvres.forEach(o => { %>
+            <div>
+                <div>
+                    <p><%= o.nom %></p>
+                    <img src="/public/images/<%= o.file %>.jpeg" alt="/public/images/<%= o.file %>.jpeg">
+                </div>
+            </div>
+            <% }) %>
+        <% } %>
+    </section>
 <%- include('./partials/footer.ejs') %>

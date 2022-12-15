@@ -1,4 +1,186 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style: none;
+}
+@font-face {
+    font-family: SFUIText;
+    src: url("../fonts/SFUIText-Regular.otf") format("opentype");
+
+}
+*{
+    --bleu-fonce : #1a1423;
+    --bleu-fonce-transp : #1a1423A0;
+    --violet : #372448;
+    --rouge : #9d3531;
+    --beige : #EACDC1;
+    --blanc : #FFFFFF;
+}
 body{
-    background-color: black;
-    color: white;
+    background-color: var(--bleu-fonce);
+    font-family: SFUIText, Serif;
+}
+a{
+    color: var(--blanc);
+    text-decoration: none;
+}
+h1{
+    color: var(--beige);
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+p{
+    color: var(--blanc);
+    font-size: 1.2rem;
+}
+h2{
+    color: var(--beige);
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.accueil{
+    width: 100%;
+}
+/**LOADER**/
+.loader{
+    position: fixed;
+    font-size: 5rem;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.lettre{
+    color: #484848;
+    letter-spacing: 5px;
+    animation : flash 1.2s linear infinite;
+}
+@keyframes flash{
+    0%{
+        color: var(--rouge);
+        text-shadow: 0 0 7px var(--rouge);
+    }
+    90%{
+        color: #484848;
+        text-shadow: none;
+    }
+    100%{
+        color: var(--rouge);
+        text-shadow: 0 0 7px var(--rouge);
+    }
+}
+.lettre:nth-child(1){
+    animation-delay: 0.1s;
+}
+.lettre:nth-child(2){
+    animation-delay: 0.2s;
+}
+.lettre:nth-child(3){
+    animation-delay: 0.3s;
+}
+.lettre:nth-child(4){
+    animation-delay: 0.4s;
+}
+.lettre:nth-child(5){
+    animation-delay: 0.5s;
+}
+.lettre:nth-child(6){
+    animation-delay: 0.6s;
+}
+.lettre:nth-child(7){
+    animation-delay: 0.7s;
+}
+.lettre:nth-child(8){
+    animation-delay: 0.8s;
+}
+
+.fondu-out{
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    transform: translate(-100%, -100%);
+}
+/**Navbar**/
+.hidden{
+    opacity: 0;
+}
+
+nav{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 500ms;
+    z-index: 2;
+}
+.nav-scroll{
+    backdrop-filter: blur(8px);
+    background-color: var(--bleu-fonce-transp);
+    height: 70px;
+}
+#nav-left{
+    display: flex;
+    margin-left: 50px;
+}
+#nav-left img{
+    width: 50px;
+}
+#nav-left svg{
+    width: 200px;
+    margin-left: 30px;
+}
+#nav-right{
+    margin-right: 20vh;
+}
+#nav-right a{
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.link-hover{
+    position: relative;
+    text-decoration: none;
+}
+.link-hover::after{
+    content: '';
+    position: absolute;
+    background-color: var(--rouge) ;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+.link-hover:hover::after{
+    width: 100%;
+}
+
+/** Footer **/
+footer{
+    margin: 20px 100px 0 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
