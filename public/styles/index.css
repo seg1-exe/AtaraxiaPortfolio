@@ -104,3 +104,38 @@
 .homepage-contact-right img{
     height: 80vh;
 }
+
+.copy-text button{
+    padding: 8px;
+    background-color: var(--rouge);
+    color: var(--blanc);
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.copy-text button::before{
+    content: "Copied";
+    position: absolute;
+    top: -50px;
+    right: 0px;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: none;
+}
+.copy-text button::after{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 25px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    display: none;
+}
+.copy-text button::before,
+.copy-text button::after{
+    display: block;
+}
