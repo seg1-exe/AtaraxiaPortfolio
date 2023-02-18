@@ -7,10 +7,10 @@ const router = Router()
 //HOME PAGE
 router.get("/", async (req, res)=>{
     try {
-        const oeuvres = await Oeuvres.find()
+        const oeuvres = await Oeuvres.find().limit(8)
         const templateData = {
             title : "Homepage",
-            styles : ["index.css"],
+            styles : ["index.css", "grid.css"],
             oeuvres : oeuvres
         }
         res.render('index', templateData)
@@ -26,7 +26,7 @@ router.post("/", async (req, res)=>{
     else nom = await Oeuvres.find()
     const templateData = {
         title : "Homepage",
-        styles : ["index.css"],
+        styles : ["index.css", "responsive.css"],
         oeuvres : oeuvres,
         nom : nom
     }
@@ -40,7 +40,7 @@ router.get("/gallery", async (req, res)=>{
     const oeuvres = await Oeuvres.find()
     const templateData = {
         title : "Gallery",
-        styles : ["gallery.css"],
+        styles : ["gallery.css", "grid.css", "responsive.css"],
         oeuvres : oeuvres
     }
     res.render('gallery', templateData)
@@ -51,7 +51,7 @@ router.get("/gallery/:id", async (req, res)=>{
     const element = await Oeuvres.findById(id)
     const templateData = {
         title : "Gallery",
-        styles : ["gallery.css"],
+        styles : ["gallery.css", "responsive.css"],
         element : element
     }
     res.render('oneElement', templateData)
@@ -73,7 +73,7 @@ router.post('/gallery', async (req, res)=>{
 router.get("/about", (req, res)=>{
     const templateData = {
         title : "About",
-        styles : ["about.css"],
+        styles : ["index.css", "responsive.css"],
     }
     res.render('about', templateData)
 })
@@ -81,7 +81,7 @@ router.get("/about", (req, res)=>{
 router.get("/contact", (req, res)=>{
     const templateData = {
         title : "Contact",
-        styles : ["contact.css"],
+        styles : ["index.css", "responsive.css"],
     }
     res.render('contact', templateData)
 })

@@ -1,9 +1,7 @@
 window.addEventListener('load', ()=> {
-    const loader = document.querySelector('.loader')
     const nav = document.querySelector('nav')
 
-    loader.classList.add('fondu-out');
-
+    //Nav stick
     window.addEventListener('scroll', ()=>{
         if(window.scrollY>10){
             nav.classList.add('nav-scroll')
@@ -12,6 +10,35 @@ window.addEventListener('load', ()=> {
         }
     })
 
+    var menuIcon = document.querySelector(".menu-icon");
+    var menu = document.querySelector(".menu");
+    var close = document.querySelector(".close");
+
+    menuIcon.addEventListener("click", afficherMenu);
+    function afficherMenu() {
+        menu.style.display = "flex";
+    };
+
+    close.addEventListener("click", fermerMenu);
+    function fermerMenu() { 
+        menu.style.display = "none";
+    };
+
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+    // options
+    itemSelector: '.grid-item',
+    columnWidth: 200,
+    gutter: 5
+    });
+
+    // element argument can be a selector string
+    //   for an individual element
+    var msnry = new Masonry( '.grid', {
+    // options
+    });
+
+    //Copier email
     let copytext = document.querySelector(".copy-text")
     copytext.querySelector("button").addEventListener("click", function(){
         let input = copytext.querySelector("input.text");

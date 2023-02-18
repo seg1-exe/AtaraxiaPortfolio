@@ -9,10 +9,13 @@
       <link rel="stylesheet" href="/public/styles/<%= style %>">
      <% }) %>
     <% } %>
+    <link rel="stylesheet" href="/public/styles/responsive.css">
     <link rel="stylesheet" href="/public/styles/look.css">
-    <script src="/public/js/app.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="/public/js/loader.js"></script>
+    <script type="module" src="/public/js/app.js"></script>
     <script src="https://kit.fontawesome.com/847debfb6c.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../public/images/favicon.ico">
     <title><%= locals.title %> </title>
 </head>
 <body>

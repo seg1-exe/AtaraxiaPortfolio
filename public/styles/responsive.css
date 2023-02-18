@@ -1,0 +1,45 @@
+@media screen and (max-width: 480px) {
+    /**Index**/
+    .loader{
+        display: none;
+    }
+    #video-header{
+        display: none;
+    }
+    #nav-right{
+        display: none;
+    }
+    .big-title{
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+    .grid-item{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .view-all{
+        font-size: 1.2rem;
+        padding: 15px 20px;
+    }
+    .homepage-about{
+        margin-top: 80px;
+        flex-wrap: wrap;
+    }
+    .homepage-about-logiciels img{
+        width: 60px;
+        height: 60px;
+    }
+    .homepage-about-right img{
+        margin-top: 30px;
+        width: 100%;
+    }
+    .homepage-contact{
+        margin-top: 80px;
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+    }
+    .homepage-contact-right img{
+        display: none;
+    }
+}
+    

@@ -1,33 +1,15 @@
-h1{
-    text-align: center;
-}
-.homepage-gallery{
-    padding: 2%;
-}
-.homepage-gallery-selector{
-    text-align: center;
-}
-.homepage-gallery-selector a{
-    margin-right: 30px;
-}
-.homepage-gallery-grid{
-    margin-top: 50px;
-}
-.homepage-gallery-view-all{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
 .oneElement{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .oneElement p{
-    margin-top: 5%;
+    margin: 5%;
+
 }
 .workshop img{
     width: 40%;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 .workshop{
     margin: 5% 0;
@@ -39,7 +21,43 @@ h1{
 .return{
     margin-left: 8%;
     font-size: 1.2rem;
+    margin-top: 130px;
 }
 .return:hover{
     text-decoration: underline;
 }
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu li {
+    list-style: none;
+    margin: 0 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: #333;
+      text-align: center;
+      z-index: 1;
+    }
+    .menu li {
+      margin: 10px 0;
+    }
+  }

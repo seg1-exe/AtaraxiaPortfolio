@@ -55,6 +55,10 @@ h2{
     margin-top: 50px;
     margin-bottom: 50px;
 }
+.page-title{
+    margin-top: 25px;
+    text-align: center;
+}
 .accueil{
     width: 100%;
 }
@@ -159,6 +163,52 @@ nav{
     font-size: 1.2rem;
 }
 
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    margin-right: 30px;
+    color: var(--blanc);
+}
+
+.menu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 30px;
+    font-size: 2rem;
+}
+
+.close{
+    color: var(--rouge);
+    padding: 2%;
+}
+
+
+@media (max-width: 768px) {
+.menu-icon {
+    display: block;
+}
+.menu {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: var(--bleu-fonce);
+    text-align: center;
+    z-index: 3;
+}
+.menu li {
+    margin: 10px 0;
+}
+}
+
 .link-hover{
     position: relative;
     text-decoration: none;
@@ -176,11 +226,15 @@ nav{
 .link-hover:hover::after{
     width: 100%;
 }
-
+.page-container{
+    margin-top: 130px;
+}
 /** Footer **/
 footer{
-    margin: 20px 100px 0 100px;
     display: flex;
     flex-direction: column;
     text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
 }

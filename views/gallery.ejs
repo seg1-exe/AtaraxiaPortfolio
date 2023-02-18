@@ -1,21 +1,25 @@
 <%- include('./partials/header.ejs') %> 
-    <h1>GALLERY</h1>
-    <section class="homepage-gallery"></section>
-    <div class="homepage-gallery-selector">
-        <a>ILLUSTRATIONS</a>
-        <a>ANIMATIONS</a>
-        <a>CLIPS</a>
-    </div>
-    <section class="homepage-gallery-grid">
-        <% if (locals.oeuvres) { %>
-            <% oeuvres.forEach(o => { %>
-            <div>
-                <div>
-                    <p><%= o.nom %></p>
-                    <img src="/public/images/<%= o.file %>.jpeg" alt="/public/images/<%= o.file %>.jpeg">
-                </div>
-            </div>
-            <% }) %>
-        <% } %>
+<div class="page-container">
+    <h1 class="page-title big-title">GALLERY</h1>
+    <section class="homepage-gallery">
+        <section class="homepage-gallery-grid">
+        <div class="grid">
+                <% if (locals.oeuvres) { %>
+                    <% oeuvres.forEach(o=> { %> 
+                    <div class="grid-item">
+                        <a href="/gallery/<%= o.id %> ">
+                                <img src="/public/images/<%= o.file %>" alt="/public/images/<%= o.file %>">
+                                <div class="overlay overlay-blur">
+                                    <div class="content">
+                                        <h2><%= o.nom %></h2>
+                                    </div>
+                                </div>
+                        </a>
+                    </div>
+                    <% }) %> 
+                <% } %>    
+        </div>
+        </section>
     </section>
+</div>
 <%- include('./partials/footer.ejs') %>

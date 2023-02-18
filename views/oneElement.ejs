@@ -1,18 +1,20 @@
 <%- include('./partials/header.ejs') %> 
-<a href="/gallery" class="return">Retour</a>
-<div class="oneElement">
-    
-    <h1> <%= element.nom %> </h1>
+<div class="page-container">
+    <a href="/gallery" class="return"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+    <div class="oneElement">
+        
 
-    <img src="../public/images/<%= element.file %>.jpeg ">
+        <h1> <%= element.nom %> </h1>
+        <img src="../public/images/<%= element.file %>">
 
-    <p><%= element.description  %> </p>
+        <p><%= element.description  %> </p>
 
-    <div class="workshop">
-        <img src="../public/images/workshop/<%= element.file %>/<%= element.work1 %>.webp">
-        <img src="../public/images/workshop/<%= element.file %>/<%= element.work2 %>.webp">
-        <img src="../public/images/workshop/<%= element.file %>/<%= element.work3 %>.webp">
-        <iframe width="1120" height="630" src="<%= element.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="workshop">
+            <iframe width="1120" height="630" src="<%= element.youtube %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <% for (const workshop of element.workshops) { %>
+                <img src="../public/images/<%= workshop %>">
+            <% } %>
+        </div>
     </div>
 </div>
 <%- include('./partials/footer.ejs') %> 

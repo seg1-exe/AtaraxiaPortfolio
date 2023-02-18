@@ -9,77 +9,73 @@
     <span class="lettre">4</span>
 </div>
 <%- include("./partials/header.ejs") %>
-    <div class="accueil ">
+    <div class="accueil">
         <video autoplay muted loop id="video-header">
             <source src="../public/images/oyasumi.mp4">
         </video>
-        <section class="homepage-gallery">
-            <h1>GALLERY</h1>
-            <div class="homepage-gallery-selector">
-                <a>ILLUSTRATIONS</a>
-                <a>ANIMATIONS</a>
-                <a>CLIPS</a>
-            </div>
-            <section class="homepage-gallery-grid">
-                <% if (locals.oeuvres) { %>
-                    <% oeuvres.forEach(o => { %>
-                    <div class="container">
-                        <a href="/gallery/<%= o.id %> ">
-                            <img src="/public/images/<%= o.file %>.jpeg" alt="/public/images/<%= o.file %>.jpeg">
-                            <div class="overlay overlay-blur">
-                                <div class="content">
-                                    <h2><%= o.nom %></h2>
-                                </div>
+        <div class="page-container">
+            <section class="homepage-gallery">
+                <h1 class="big-title">GALLERY</h1>
+                <section class="homepage-gallery-grid">
+                   <div class="grid">
+                        <% if (locals.oeuvres) { %>
+                            <% oeuvres.forEach(o=> { %> 
+                            <div class="grid-item">
+                                <a href="/gallery/<%= o.id %> ">
+                                        <img src="/public/images/<%= o.file %>" alt="/public/images/<%= o.file %>">
+                                        <div class="overlay overlay-blur">
+                                            <div class="content">
+                                                <h2><%= o.nom %></h2>
+                                            </div>
+                                        </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <% }) %>
-                <% } %>
-    
-    
-    
+                            <% }) %> 
+                        <% } %>    
+                   </div>
+                </section>
+                <div class="homepage-gallery-view-all">
+                    <a href="/gallery" class="view-all">View all</a>
+                </div>
             </section>
-            <div class="homepage-gallery-view-all">
-                <a href="/gallery" class="view-all">View all</a>
-            </div>
-        </section>
-        <section class="homepage-about">
-            <div class="homepage-about-left">
-                <h1>ABOUT</h1>
-                <p>Welcome, i am 4t4r4xi4 (Ataraxia), french artist/illustrator based in Paris. My universe gravitates around eastern spirituality and mysticism. Passionate about all arts, i am available for any kind of projects.</p>
-                <h2>Logiciels</h2>
-                <div class="homepage-about-logiciels">
-                    <img src="../public/images/procreate.jpeg">
-                    <img src="../public/images/ps.jpeg">
-                    <img src="../public/images/pr.jpeg">
-                    <img src="../public/images/ae.jpeg">
-                    <img src="../public/images/Blender-icon.png">
+            <section class="homepage-about">
+                <div class="homepage-about-left">
+                    <h1 class="big-title">ABOUT</h1>
+                    <p>Welcome, i am 4t4r4xi4 (Ataraxia), french artist/illustrator based in Paris. My universe gravitates around eastern spirituality and mysticism. Passionate about all arts, i am available for any kind of projects.</p>
+                    <h2>Logiciels</h2>
+                    <div class="homepage-about-logiciels">
+                        <img src="../public/images/procreate.jpeg">
+                        <img src="../public/images/ps.jpeg">
+                        <img src="../public/images/pr.jpeg">
+                        <img src="../public/images/ae.jpeg">
+                        <img src="../public/images/Blender-icon.png">
+                    </div>
                 </div>
-            </div>
-            <div class="homepage-about-right">
-                <img src="public/images/ataraxia.jpeg">
-            </div>
-        </section>
-        <section class="homepage-contact">
-            <div class="homepage-contact-left">
-                <h1>CONTACT</h1>
-                <p>Feel free to contact me for your project’s requests. Commissions, collaborations or simple questions, i’d be glad to propose you an adapted solution. </p>
-                <div class="copy-text">
-                    <p>Email me at 4t4r4xi4.x@gmail.com  <button><i class="fa-regular fa-clone"></i></button></p>
-                    <input type="text" class="text hidden" value="4t4r4xi4.x@gmail.com">
+                <div class="homepage-about-right">
+                    <img src="public/images/ataraxia.jpeg">
                 </div>
-                <h2>My social medias</h2>
-                <div class="social-medias">
-                    <a href="https://www.instagram.com/at4r4xi4/"><svg width="100%" height="100%" viewBox="0 0 1867 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,2244,2239.67)"><g transform="matrix(4.16667,0,0,4.16667,-1310.67,-1173)"><g transform="matrix(1,0,0,1,-224,-256)"><clipPath id="_clip1"><rect x="0" y="0" width="448" height="512"/></clipPath><g clip-path="url(#_clip1)"><path d="M224.1,141C160.5,141 109.2,192.3 109.2,255.9C109.2,319.5 160.5,370.8 224.1,370.8C287.7,370.8 339,319.5 339,255.9C339,192.3 287.7,141 224.1,141ZM224.1,330.6C183,330.6 149.4,297.1 149.4,255.9C149.4,214.7 182.9,181.2 224.1,181.2C265.3,181.2 298.8,214.7 298.8,255.9C298.8,297.1 265.2,330.6 224.1,330.6ZM370.5,136.3C370.5,151.2 358.5,163.1 343.7,163.1C328.8,163.1 316.9,151.1 316.9,136.3C316.9,121.5 328.9,109.5 343.7,109.5C358.5,109.5 370.5,121.5 370.5,136.3ZM446.6,163.5C444.9,127.6 436.7,95.8 410.4,69.6C384.2,43.4 352.4,35.2 316.5,33.4C279.5,31.3 168.6,31.3 131.6,33.4C95.8,35.1 64,43.3 37.7,69.5C11.4,95.7 3.3,127.5 1.5,163.4C-0.6,200.4 -0.6,311.3 1.5,348.3C3.2,384.2 11.4,416 37.7,442.2C64,468.4 95.7,476.6 131.6,478.4C168.6,480.5 279.5,480.5 316.5,478.4C352.4,476.7 384.2,468.5 410.4,442.2C436.6,416 444.8,384.2 446.6,348.3C448.7,311.3 448.7,200.5 446.6,163.5ZM398.8,388C391,407.6 375.9,422.7 356.2,430.6C326.7,442.3 256.7,439.6 224.1,439.6C191.5,439.6 121.4,442.2 92,430.6C72.4,422.8 57.3,407.7 49.4,388C37.7,358.5 40.4,288.5 40.4,255.9C40.4,223.3 37.8,153.2 49.4,123.8C57.2,104.2 72.3,89.1 92,81.2C121.5,69.5 191.5,72.2 224.1,72.2C256.7,72.2 326.8,69.6 356.2,81.2C375.8,89 390.9,104.1 398.8,123.8C410.5,153.3 407.8,223.3 407.8,255.9C407.8,288.5 410.5,358.6 398.8,388Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></g></svg></a>
-                    <a href="https://www.youtube.com/channel/UCC1dKniQuDAyXs8wRWucEjQ"><svg width="100%" height="100%" viewBox="0 0 2400 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,3799.67,-3776)"><g transform="matrix(4.16667,0,0,4.16667,-2599.67,4842.67)"><g transform="matrix(1,0,0,1,-288,-256)"><path d="M549.655,124.083C543.374,100.433 524.868,81.807 501.371,75.486C458.781,64 288,64 288,64C288,64 117.22,64 74.629,75.486C51.132,81.808 32.626,100.433 26.345,124.083C14.933,166.95 14.933,256.388 14.933,256.388C14.933,256.388 14.933,345.826 26.345,388.693C32.626,412.343 51.132,430.193 74.629,436.514C117.22,448 288,448 288,448C288,448 458.78,448 501.371,436.514C524.868,430.193 543.374,412.343 549.655,388.693C561.067,345.826 561.067,256.388 561.067,256.388C561.067,256.388 561.067,166.95 549.655,124.083ZM232.145,337.591L232.145,175.185L374.884,256.39L232.145,337.591Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
-                    <a href="https://www.twitch.tv/at4r4xi4"><svg width="100%" height="100%" viewBox="0 0 2134 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,4733,291)"><g transform="matrix(4.16667,0,0,4.16667,-3666.33,775.667)"><g transform="matrix(1,0,0,1,-256,-256)"><path d="M391.17,103.47L352.54,103.47L352.54,213.17L391.17,213.17L391.17,103.47ZM285,103L246.37,103L246.37,212.75L285,212.75L285,103ZM120.83,0L24.31,91.42L24.31,420.58L140.14,420.58L140.14,512L236.67,420.58L313.92,420.58L487.69,256L487.69,0L120.83,0ZM449.07,237.75L371.85,310.87L294.61,310.87L227.01,374.87L227.01,310.87L140.14,310.87L140.14,36.58L449.07,36.58L449.07,237.75Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
-                    <a href="https://twitter.com/4t4r4xi4_art"><svg width="100%" height="100%" viewBox="0 0 2134 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,2377.33,-576)"><g transform="matrix(4.16667,0,0,4.16667,-1310.67,1642.67)"><g transform="matrix(1,0,0,1,-256,-256)"><path d="M459.37,151.716C459.695,156.264 459.695,160.813 459.695,165.361C459.695,304.081 354.112,463.919 161.137,463.919C101.685,463.919 46.457,446.7 0,416.813C8.447,417.787 16.568,418.112 25.34,418.112C74.395,418.112 119.553,401.544 155.614,373.28C109.482,372.305 70.822,342.092 57.502,300.508C64,301.482 70.497,302.132 77.32,302.132C86.741,302.132 96.163,300.832 104.934,298.559C56.853,288.812 20.791,246.579 20.791,195.574L20.791,194.275C34.76,202.072 51.005,206.945 68.222,207.594C39.958,188.751 21.441,156.589 21.441,120.203C21.441,100.711 26.638,82.843 35.735,67.249C87.39,130.924 165.035,172.507 252.1,177.056C250.476,169.259 249.501,161.138 249.501,153.016C249.501,95.188 296.283,48.082 354.435,48.082C384.648,48.082 411.937,60.752 431.105,81.219C454.82,76.671 477.561,67.899 497.704,55.879C489.906,80.245 473.338,100.712 451.572,113.706C472.689,111.433 493.156,105.584 511.998,97.463C497.706,118.254 479.837,136.771 459.37,151.716Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
-                    <a href="#"><svg width="100%" height="100%" viewBox="0 0 2134 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,4733,-1642.67)"><g transform="matrix(4.16667,0,0,4.16667,-3666.33,2709.33)"><g transform="matrix(1,0,0,1,-256,-256)"><path d="M48,64C21.5,64 0,85.5 0,112C0,127.1 7.1,141.3 19.2,150.4L236.8,313.6C248.2,322.1 263.8,322.1 275.2,313.6L492.8,150.4C504.9,141.3 512,127.1 512,112C512,85.5 490.5,64 464,64L48,64ZM0,176L0,384C0,419.3 28.7,448 64,448L448,448C483.3,448 512,419.3 512,384L512,176L294.4,339.2C271.6,356.3 240.4,356.3 217.6,339.2L0,176Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
+            </section>
+            <section class="homepage-contact">
+                <div class="homepage-contact-left">
+                    <h1 class="big-title">CONTACT</h1>
+                    <p>Feel free to contact me for your project’s requests. Commissions, collaborations or simple questions, i’d be glad to propose you an adapted solution. </p>
+                    <div class="copy-text">
+                        <p>Email me at 4t4r4xi4.x@gmail.com  <button><i class="fa-regular fa-clone"></i></button></p>
+                        <input type="text" class="text hidden" value="4t4r4xi4.x@gmail.com">
+                    </div>
+                    <h2>My social medias</h2>
+                    <div class="social-medias">
+                        <a href="https://www.instagram.com/at4r4xi4/"><svg width="100%" height="100%" viewBox="0 0 1867 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,2244,2239.67)"><g transform="matrix(4.16667,0,0,4.16667,-1310.67,-1173)"><g transform="matrix(1,0,0,1,-224,-256)"><clipPath id="_clip1"><rect x="0" y="0" width="448" height="512"/></clipPath><g clip-path="url(#_clip1)"><path d="M224.1,141C160.5,141 109.2,192.3 109.2,255.9C109.2,319.5 160.5,370.8 224.1,370.8C287.7,370.8 339,319.5 339,255.9C339,192.3 287.7,141 224.1,141ZM224.1,330.6C183,330.6 149.4,297.1 149.4,255.9C149.4,214.7 182.9,181.2 224.1,181.2C265.3,181.2 298.8,214.7 298.8,255.9C298.8,297.1 265.2,330.6 224.1,330.6ZM370.5,136.3C370.5,151.2 358.5,163.1 343.7,163.1C328.8,163.1 316.9,151.1 316.9,136.3C316.9,121.5 328.9,109.5 343.7,109.5C358.5,109.5 370.5,121.5 370.5,136.3ZM446.6,163.5C444.9,127.6 436.7,95.8 410.4,69.6C384.2,43.4 352.4,35.2 316.5,33.4C279.5,31.3 168.6,31.3 131.6,33.4C95.8,35.1 64,43.3 37.7,69.5C11.4,95.7 3.3,127.5 1.5,163.4C-0.6,200.4 -0.6,311.3 1.5,348.3C3.2,384.2 11.4,416 37.7,442.2C64,468.4 95.7,476.6 131.6,478.4C168.6,480.5 279.5,480.5 316.5,478.4C352.4,476.7 384.2,468.5 410.4,442.2C436.6,416 444.8,384.2 446.6,348.3C448.7,311.3 448.7,200.5 446.6,163.5ZM398.8,388C391,407.6 375.9,422.7 356.2,430.6C326.7,442.3 256.7,439.6 224.1,439.6C191.5,439.6 121.4,442.2 92,430.6C72.4,422.8 57.3,407.7 49.4,388C37.7,358.5 40.4,288.5 40.4,255.9C40.4,223.3 37.8,153.2 49.4,123.8C57.2,104.2 72.3,89.1 92,81.2C121.5,69.5 191.5,72.2 224.1,72.2C256.7,72.2 326.8,69.6 356.2,81.2C375.8,89 390.9,104.1 398.8,123.8C410.5,153.3 407.8,223.3 407.8,255.9C407.8,288.5 410.5,358.6 398.8,388Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></g></svg></a>
+                        <a href="https://www.youtube.com/channel/UCC1dKniQuDAyXs8wRWucEjQ"><svg width="100%" height="100%" viewBox="0 0 2400 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,3799.67,-3776)"><g transform="matrix(4.16667,0,0,4.16667,-2599.67,4842.67)"><g transform="matrix(1,0,0,1,-288,-256)"><path d="M549.655,124.083C543.374,100.433 524.868,81.807 501.371,75.486C458.781,64 288,64 288,64C288,64 117.22,64 74.629,75.486C51.132,81.808 32.626,100.433 26.345,124.083C14.933,166.95 14.933,256.388 14.933,256.388C14.933,256.388 14.933,345.826 26.345,388.693C32.626,412.343 51.132,430.193 74.629,436.514C117.22,448 288,448 288,448C288,448 458.78,448 501.371,436.514C524.868,430.193 543.374,412.343 549.655,388.693C561.067,345.826 561.067,256.388 561.067,256.388C561.067,256.388 561.067,166.95 549.655,124.083ZM232.145,337.591L232.145,175.185L374.884,256.39L232.145,337.591Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
+                        <a href="https://www.twitch.tv/at4r4xi4"><svg width="100%" height="100%" viewBox="0 0 2134 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,4733,291)"><g transform="matrix(4.16667,0,0,4.16667,-3666.33,775.667)"><g transform="matrix(1,0,0,1,-256,-256)"><path d="M391.17,103.47L352.54,103.47L352.54,213.17L391.17,213.17L391.17,103.47ZM285,103L246.37,103L246.37,212.75L285,212.75L285,103ZM120.83,0L24.31,91.42L24.31,420.58L140.14,420.58L140.14,512L236.67,420.58L313.92,420.58L487.69,256L487.69,0L120.83,0ZM449.07,237.75L371.85,310.87L294.61,310.87L227.01,374.87L227.01,310.87L140.14,310.87L140.14,36.58L449.07,36.58L449.07,237.75Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
+                        <a href="https://twitter.com/4t4r4xi4_art"><svg width="100%" height="100%" viewBox="0 0 2134 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,2377.33,-576)"><g transform="matrix(4.16667,0,0,4.16667,-1310.67,1642.67)"><g transform="matrix(1,0,0,1,-256,-256)"><path d="M459.37,151.716C459.695,156.264 459.695,160.813 459.695,165.361C459.695,304.081 354.112,463.919 161.137,463.919C101.685,463.919 46.457,446.7 0,416.813C8.447,417.787 16.568,418.112 25.34,418.112C74.395,418.112 119.553,401.544 155.614,373.28C109.482,372.305 70.822,342.092 57.502,300.508C64,301.482 70.497,302.132 77.32,302.132C86.741,302.132 96.163,300.832 104.934,298.559C56.853,288.812 20.791,246.579 20.791,195.574L20.791,194.275C34.76,202.072 51.005,206.945 68.222,207.594C39.958,188.751 21.441,156.589 21.441,120.203C21.441,100.711 26.638,82.843 35.735,67.249C87.39,130.924 165.035,172.507 252.1,177.056C250.476,169.259 249.501,161.138 249.501,153.016C249.501,95.188 296.283,48.082 354.435,48.082C384.648,48.082 411.937,60.752 431.105,81.219C454.82,76.671 477.561,67.899 497.704,55.879C489.906,80.245 473.338,100.712 451.572,113.706C472.689,111.433 493.156,105.584 511.998,97.463C497.706,118.254 479.837,136.771 459.37,151.716Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
+                        <a href="#"><svg width="100%" height="100%" viewBox="0 0 2134 2134" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,4733,-1642.67)"><g transform="matrix(4.16667,0,0,4.16667,-3666.33,2709.33)"><g transform="matrix(1,0,0,1,-256,-256)"><path d="M48,64C21.5,64 0,85.5 0,112C0,127.1 7.1,141.3 19.2,150.4L236.8,313.6C248.2,322.1 263.8,322.1 275.2,313.6L492.8,150.4C504.9,141.3 512,127.1 512,112C512,85.5 490.5,64 464,64L48,64ZM0,176L0,384C0,419.3 28.7,448 64,448L448,448C483.3,448 512,419.3 512,384L512,176L294.4,339.2C271.6,356.3 240.4,356.3 217.6,339.2L0,176Z" style="fill:rgb(157,53,49);fill-rule:nonzero;"/></g></g></g></svg></a>
+                    </div>
                 </div>
-            </div>
-            <div class="homepage-contact-right">
-                <img src="/public/images/Signature.png">
-            </div>
-        </section>
+                <div class="homepage-contact-right">
+                    <img src="/public/images/Signature.png">
+                </div>
+            </section>
+        </div>
     </div>
 <%- include('./partials/footer.ejs') %>

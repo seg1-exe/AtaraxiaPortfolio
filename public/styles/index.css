@@ -3,74 +3,12 @@
     margin-top: 100px;
 }
 /**MAIN**/
-/**Gallery**/
-.homepage-gallery{
-    padding: 2%;
-}
-.homepage-gallery-selector a{
-    margin-right: 30px;
-}
-.homepage-gallery-grid{
-    margin-top: 50px;
-}
-.homepage-gallery-view-all{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-.view-all{
-    background-color: var(--violet);
-    border: 0;
-    border-radius: 2px;
-    cursor: pointer;
-    padding: 20px 30px;
-    font-size: 1.5rem;
-}
-
-.container{
-    width: 400px;
-    position: relative;
-    cursor: pointer;
-}
-.container img{
-    display: block;
-    width: 100%;
-}
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.25s ;
-}
-
-.overlay-blur{
-    backdrop-filter: blur(0.7px);
-}
-
-.overlay > *{
-    transform:  translateY(20px);
-    transition: transform 0.25s;
-}
-
-.overlay:hover{
-    opacity: 1;
-}
-
-.overlay:hover > * {
-    transform:  translateY(0);
-}
 /** About **/
 .homepage-about{
     padding: 2%;
     display: flex;
-    margin-top: 100px;
+    margin-top: 130px;
+    margin-bottom: 60px;
 }
 .homepage-about-logiciels{
     display: flex;
@@ -87,14 +25,14 @@
 .homepage-contact{
     padding: 2%;
     display: flex;
-    margin-top: 100px;
+    margin-top: 130px;
 }
 .social-medias a{
     margin-right: 20px;
 }
 .social-medias svg{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     color: var(--rouge);
 }
 
@@ -138,4 +76,8 @@
 .copy-text button::before,
 .copy-text button::after{
     display: block;
+}
+
+.contact-page-signature img{
+    height: 65vh;
 }
